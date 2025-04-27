@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws InterruptedException, IOException {
+        HashMap<Object, Object> map = new HashMap<>();
+        User user = new User();
+        Scanner scanner = new Scanner(System.in);
+       /* System.out.println("da li imate nalog");
+        String ul = scanner.next();
+        while (true){
+            if (ul.equals("ne")) {
+                System.out.println("da li imate poseban kod ako imate unesite u ostalom kliknite enter");
+                String k = scanner.next();
+                if (k.equals("777")) {
+                    user.userAdmin();
+                } else if (k.equals("77")) {
+                    user.userPremium();
+                } else {
+                    user.userNormal();
+                }
+                break;
+            } else if (ul.equals("da")) {
+                user.login();
+            } else {
+                System.out.println("pogresno unet odgovor probajte ponovo");
+                ul = scanner.next();
+            }
+        }*/
+        System.out.println("sta zelis da igras: slot, rulet");
+        String z = scanner.next();
+        if(z.equals("slot")) {
+            Slot ob = new Slot();
+            ob.sl();
+        } else if (z.equals("rulet")) {
+            Roulet r = new Roulet();
+            r.ru();
+        }
+
+    }
+}
