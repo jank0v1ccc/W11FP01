@@ -1,0 +1,71 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
+
+public class User {
+
+    HashMap<Integer, String> map = new HashMap<>();
+    public void hm (){
+        map.put(1677744469,"Milan");
+        map.put(1111111111,"Milan2");
+    }
+    Scanner scanner =new Scanner(System.in);
+    List<String>users = new ArrayList<>();
+    FileWriter users1 = new FileWriter();
+    public String normal;
+    public String premium;
+    public String Admin;
+    public User() throws IOException {
+    }
+    public String getPremium(){return premium;}
+    public void setPremium(String premium) {this.Admin = premium;}
+    public String getAdmin(){return Admin;}
+    public void setAdmin(String Admin) {this.Admin = Admin;}
+    public String getNormal(){return normal;}
+    public void setUser(String normal) {this.normal = normal;}
+    
+    public void userNormal() throws IOException {
+        System.out.println("vi nemate kod, obican user");
+        System.out.println("koji zelite da bude vas jedinsveni desetocifreni broj");
+        String jb;
+        users.add(jb = scanner.next().toLowerCase());
+        System.out.println("kako se zovete");
+        String n;
+        users.add(n = scanner.next().toLowerCase());
+        users1.write(jb+", "+n+" normal"+"\n");
+        this.normal = normal;
+    }
+    public void userPremium() throws IOException {
+        System.out.println("vi ste iskoristili kod za premium");
+        System.out.println("koji zelite da bude vas jedinsveni desetocifreni broj");
+        String jb;
+        users.add(jb = scanner.next().toLowerCase());
+        System.out.println("kako se zovete");
+        String n;
+        users.add(n = scanner.next().toLowerCase());
+        users1.write(jb+", "+n+" premium"+"\n");
+        this.premium = premium;
+    }
+    public void userAdmin() throws IOException {
+        System.out.println("vi ste iskoristili kod za Admina");
+        System.out.println("koji zelite da bude vas jedinsveni desetocifreni broj");
+        String jb;
+        users.add(jb = scanner.next().toLowerCase());
+        System.out.println("kako se zovete");
+        String n;
+        users.add(n = scanner.next().toLowerCase());
+        users1.write(jb+", "+n+" admin"+"\n");
+        this.Admin = Admin;
+    }
+    public void login(){
+        int j = map.size();
+        System.out.println("Unesite svoj jedinsveni desetocifreni broj");
+        int jb = scanner.nextInt();
+        if (map.containsKey(jb)){
+            System.out.println("dobro dosli"+map.get(jb));
+        }else {
+            System.out.println("pogresno unet broj");
+        }
+
+    }
+}
