@@ -1,0 +1,47 @@
+import java.util.*;
+
+
+public class Slot {
+    public void sl() throws InterruptedException {
+
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        ArrayList<String> r = new ArrayList<>();
+        System.out.println("koliko je stanje na racunu:");
+        int x = scanner.nextInt();
+        int x1;
+        int u;
+        String o = "da";
+        while (x>100000){
+            System.out.println("prevelika uplata, ponovo unesi:");
+        }
+        while (x>=0) {
+            if (o.equals("da")) {
+                System.out.println("koliki je uplat");
+                u = scanner.nextInt();
+                while (u > x) {
+                    System.out.println();
+                    System.out.println("nemate toliko novca na racunu");
+                    u = scanner.nextInt();
+                }
+                x1 = x - u;
+                System.out.println("okej");
+                System.out.println("vrti se...");
+                Thread.sleep(3000);
+                String[] s = {"🍒", "7", "\uD83C\uDF52", "\uD83C\uDF47", "\uD83C\uDF49 ", "\uD83D\uDD14 ", "⭐", "\uD83D\uDC8E ", "\uD83D\uDCB0 ", "\uD83C\uDFB0 ", "\uD83C\uDF4A ", "\uD83E\uDE99 ", "\uD83C\uDF53 "};
+                String iz = s[random.nextInt(13)];
+                String iz1 = s[random.nextInt(13)];
+                String iz2 = s[random.nextInt(13)];
+                r.add(iz);
+                r.add(iz1);
+                r.add(iz2);
+                if (iz.equals(iz1) && iz.equals(iz2)) {
+                    System.out.println("duplirao si svoj novac");
+                    System.out.println(x * 2);
+                    x = x * 2;
+                    System.out.println("stanje na racunu je: " + x);
+                } else {
+                    System.out.println("izgubio si svoj novac");
+                    x = x1;
+                    System.out.println("stanje na racunu je: " + x);
+                }
