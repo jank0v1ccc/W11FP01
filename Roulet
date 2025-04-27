@@ -1,0 +1,65 @@
+import java.util.*;
+
+public class Roulet {
+
+    public void ru() throws InterruptedException {
+
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        int u;
+        int u1;
+        String odg = "da";
+        System.out.println("koliko je stanje na racunu:");
+        int x = scanner.nextInt();
+        while (x>100000){
+            System.out.println("netacno unet broj:");
+            x = scanner.nextInt();
+        }while (x>0 || Objects.equals(odg, "ne")) {
+            for (int i = 0; i < 1; i++) {
+                System.out.println("da li zelis da nastavis sa igrom");
+                odg = scanner.next();
+            }
+            System.out.println("nasta uplacujes");
+            String[] m = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35"};
+            System.out.println(Arrays.toString(m));
+            System.out.println("ili par nepar");
+            String o = m[random.nextInt(36)];
+            String od = scanner.next();
+            System.out.println("a kolika je uplata");
+            u = scanner.nextInt();
+            while (u > x) {
+                System.out.println("prevelika uplata");
+                u = scanner.nextInt();
+            }
+            if (Objects.equals(od, o)) {
+                System.out.println("bravo trodupliro si novac");
+                u1 = u * 3;
+                x = x + u1;
+                System.out.println("preostalo para na racunu: "+ x);
+            } else if (od.equals("par") && Objects.equals(o, "2") || Objects.equals(o, "4") || Objects.equals(o, "6") || Objects.equals(o, "8") || Objects.equals(o, "10") || o == "12" || o == "14" || o == "16" || o == "18" || o == "20" || o == "22" || o == "24" || o == "26" || o == "28" || o == "30" || o == "32" || o == "34") {
+                System.out.println("bravo duplirao si svoj novac");
+                u1 = u * 2;
+                x = x + u1;
+                System.out.println("preostalo para na racunu: "+ x);
+            } else if (o.equals(od.equals("0"))) {
+                System.out.println("bravo trodupliro si novac");
+                u1 = u * 3;
+                x = x + u1;
+                System.out.println("preostalo para na racunu: "+ x);
+            } else if (o != od) {
+                System.out.println("izgubi si pare");
+                x = x-u;
+                System.out.println("preostalo para na racunu: "+ x);
+            } else {
+                System.out.println("bravo duplirao si svoj novac");
+                u1 = u * 2;
+                x = x + u1;
+                System.out.println("preostalo para na racunu: "+ x);
+            }
+            System.out.println(o);
+            System.out.println("da li zelis da nastavis sa igrom");
+            odg = scanner.next();
+        }
+    }
+
+}
